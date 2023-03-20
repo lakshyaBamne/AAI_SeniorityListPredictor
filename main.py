@@ -9,7 +9,7 @@ import numpy as np
 ####################################################################################
 
 # importing the excel file in a dataframe
-df = pd.read_excel('DPC_SeniorityList.xlsx', usecols = ["RANK", "POST", "Emp No", "Name", "DOB", "DOJ AAI", "DOR"])
+df = pd.read_excel('DPC_SeniorityList.xlsx', usecols = ["RANK", "POST", "EMP_NO", "NAME", "DOB", "DOJ_AAI", "DOR"])
 
 first_year = int(df['DOR'].min().date().year)
 last_year = int(df['DOR'].max().date().year)
@@ -124,7 +124,7 @@ for i in range(first_year, last_year+1):
 
 # x_axis = np.linspace(min(yearly_retirements), max(yearly_retirements), num=len(yearly_retirements),endpoint=True)
 
-plt.bar(years,yearly_retirements, label='Yearly Retirements', color='green', width=0.1)
+plt.plot(years,yearly_retirements, label='Yearly Retirements', color='green', width=0.1)
 
 plt.legend()
 
